@@ -24,11 +24,7 @@ WORKDIR /workspace
 RUN apt-get update && \
     # This command updates the package lists for the APT (Advanced Package Tool) package manager. 
     # It fetches the latest information about available packages from the configured repositories.
-    apt-get install -y \
-        python3 \
-        python3-pip \
-        git && \
-    # This command installs the specified packages (python3 and python3-pip). 
+    apt-get install -y git && \
     # The -y flag is used to automatically confirm any prompts 
     # during the installation process without requiring user interaction.
     apt-get clean && \
