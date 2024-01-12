@@ -22,7 +22,7 @@ services:
     # add service to network
     networks:
       - PingPong
-    # enable allocation of terminal to container
+    # enable allocation of pseudo-TTY to keep service running
     tty: true
     # keep standard input open on container
     stdin_open: true
@@ -43,7 +43,7 @@ services:
     # add service to network
     networks:
       - PingPong
-    # enable allocation of terminal to container
+    # enable allocation of pseudo-TTY to keep service running
     tty: true
     # keep standard input open on container
     stdin_open: true
