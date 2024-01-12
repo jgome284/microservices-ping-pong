@@ -7,9 +7,6 @@ import re
 LOCAL_HOST = '0.0.0.0'
 LOCAL_PORT = 12345
 
-# set random seed
-random.seed(42)
-
 # pick random character
 char = random.choice(cowsay.char_names)
 

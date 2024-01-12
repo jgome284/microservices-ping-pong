@@ -6,9 +6,6 @@ import random
 DESTINATION_HOST = 'consumer'
 DESTINATION_PORT = 12345
 
-# set random seed
-random.seed(24)
-
 # pick random character
 char = random.choice(cowsay.char_names)
         
