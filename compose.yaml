@@ -1,0 +1,46 @@
+# Visit the Docker compose reference guide for more information
+# https://docs.docker.com/compose/compose-file/
+
+# deploy micro services
+version: '0.2'
+services:
+      
+  # create producer container
+  producer:
+    # configure build properties
+    build: 
+      # set build context to producer devcontainer
+      context: ./producer/.devcontainer
+      # built to deployment stage
+      target: deployment
+    # bind host to container to persist file changes
+    volumes:
+      - ./producer:/microservices-producer:cached
+    # add service dependencies
+    depends_on:
+      - consumer
+    # add service to network
+    networks:
+      - PingPong
+  
+  # create consumer container
+  consumer:
+    # configure build properties
+    build: 
+      # set build context to consumer devcontainer
+      context: ./consumer/.devcontainer
+      # built to deployment stage
+      target: deployment
+    # bind host to container to persist file changes
+    volumes:
+      - ./consumer:/microservices-consumer:cached
+    # add service to network
+    networks:
+      - PingPong
+
+# create network
+networks:
+  # name network
+  PingPong:
+    # configure network type
+    driver: bridge
