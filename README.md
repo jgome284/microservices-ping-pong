@@ -73,7 +73,9 @@ With both devcontainers running, test out the application by running each servic
 
 ![Ping-Pong!](imgs\Ping-Pong.png)
 
-To launch the production application, run `docker compose up` in the cli. This should default to the production deployment configuration in `compose.yaml`. There are some issues, however that need to be solved - hint, hint... how to handle user input - for the application to run correctly in production. You think you've got what it takes? Take development into your own hands to get our microservices up and ready for production! (⌐■_■)
+To launch the production application, run `docker compose up` in the cli. This should default to the production deployment configuration in `compose.yaml`. There are some improvements, however, that can be made - hint, hint... handling user input more elegantly, something the Producer service will wait for indefinately. So far, the only way to provide user input to this service is to run the [`docker attach [OPTIONS] CONTAINER`](https://docs.docker.com/engine/reference/commandline/attach/) command.
+
+Think you've got what it takes? Take development into your own hands, improve on what these microservices offer for production! (⌐■_■)
 
 ## License
 
