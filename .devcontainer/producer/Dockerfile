@@ -52,9 +52,6 @@ RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
     # Install Python dependencies
     pip3 install --no-cache-dir -r requirements.txt
 
-# Make port 12345 available to the world outside this container
-EXPOSE 12345
-
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
 ARG UID=10001
