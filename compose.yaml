@@ -10,9 +10,7 @@ services:
     # configure build properties
     build: 
       # set build context to producer devcontainer
-      context: ./producer/.devcontainer
-      # built to deployment stage
-      target: deployment
+      context: ./.devcontainer/producer
     # bind host to container to persist file changes
     volumes:
       - ./producer:/microservices-producer:cached
@@ -22,21 +20,25 @@ services:
     # add service to network
     networks:
       - PingPong
-  
+    # enable allocation of pseudo-TTY to keep service running
+    tty: true
+    # keep standard input open on container
+    stdin_open: true
+
   # create consumer container
   consumer:
     # configure build properties
     build: 
       # set build context to consumer devcontainer
-      context: ./consumer/.devcontainer
-      # built to deployment stage
-      target: deployment
+      context: ./.devcontainer/consumer
     # bind host to container to persist file changes
     volumes:
       - ./consumer:/microservices-consumer:cached
     # add service to network
     networks:
       - PingPong
+    # enable allocation of pseudo-TTY to keep service running
+    tty: true
 
 # create network
 networks:
