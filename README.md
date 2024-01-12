@@ -71,7 +71,7 @@ The other service's DevContainer can be opened on a seperate VS Code window in l
 
 With both devcontainers running, test out the application by running each service. We're playing a game of Ping-Pong 🏓 and a random character is selected for each match! User input is required and you'll need to make the right serve if you want a good game. 😉
 
-![Ping-Pong!](imgs\Ping-Pong.png)
+![Ping-Pong!](imgs/Ping-Pong.png)
 
 To launch the production application, run `docker compose up` in the cli. This should default to the production deployment configuration in `compose.yaml`. There are some improvements, however, that can be made - hint, hint... handling user input more elegantly, something the Producer service will wait for indefinately. So far, the only way to provide user input to this service is to run the [`docker attach [OPTIONS] CONTAINER`](https://docs.docker.com/engine/reference/commandline/attach/) command.
 
