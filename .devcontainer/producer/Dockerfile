@@ -4,8 +4,10 @@
 # If you need more help, visit the Dockerfile reference guide at
 # https://docs.docker.com/engine/reference/builder/
 
+# Initialize build line arguments
 ARG PYTHON_VERSION=3.10
 ARG OS=bookworm
+ARG VARIANT=slim
 
 # First stage: Development
 FROM python:${PYTHON_VERSION}-${OS} as development
@@ -44,7 +46,6 @@ RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
 CMD ["python3"]
 
 # Second stage: Deployment
-ARG VARIANT=slim
 FROM python:${PYTHON_VERSION}-${VARIANT}-${OS} as deployment
 
 # Leverage a bind mount to requirements.txt to avoid having to copy them into this layer.
