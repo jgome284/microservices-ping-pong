@@ -61,6 +61,9 @@ The microservices built have *cowsay* as a dependency for demonstration purposes
 <!-- GETTING STARTED -->
 ## Getting started
 
+There are two `.yaml` files included for this project. `compose-dev.yaml` serves for the development configuration and `compose.yaml` is meant for the production version. The Dockerfiles created for each service are multi-stage builds. The first stage, or development stage, hosts additional tools like git. The second stage, or deployment stage is built with a *slim* OS system variant and without extra tools that are not required for a production application. Shown below are the images built and their respective sizes for comparison.
+
+![Development & Production Img Size Comparison](imgs/dev_prod_img_size.png)
 
 ### Development
 
