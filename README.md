@@ -24,6 +24,8 @@
   - [About](#about)
   - [Prerequisites](#prerequisites)
   - [Getting started](#getting-started)
+    - [Development](#development)
+    - [Production](#production)
   - [License](#license)
 
 <!-- ABOUT THE PROJECT -->
@@ -59,6 +61,9 @@ The microservices built have *cowsay* as a dependency for demonstration purposes
 <!-- GETTING STARTED -->
 ## Getting started
 
+
+### Development
+
 Open Docker Desktop to run the Docker daemon, a background process that manages and coordinates Docker containers on your system. On VS Code, start the development container by running `Dev Containers: Rebuild and Reopen In Container` in the command palette. It can be accessed with the keyboard shortcut `ctrl + shift + P` on your keyboard.
 
 Since two `devcontainer.json` files are available, VS Code will ask you which service you would like to attach to. Regardless of your choice, both services are launched by Docker Compose IAW `compose-dev.yaml`.
@@ -73,7 +78,9 @@ With both devcontainers running, test out the application by running each servic
 
 ![Ping-Pong!](imgs/Ping-Pong.png)
 
-To launch the production application, run `docker compose up` in the cli. This should default to the production deployment configuration in `compose.yaml`. There are some improvements, however, that can be made - hint, hint... handling user input more elegantly, something the Producer service will wait for indefinately. So far, the only way to provide user input to this service is to run the [`docker attach [OPTIONS] CONTAINER`](https://docs.docker.com/engine/reference/commandline/attach/) command.
+### Production
+
+To launch the production application, run `docker compose up` in the cli. This should default to the production deployment configuration in `compose.yaml`. There are some improvements, however, that can be made - hint, hint... handling user input more elegantly, something the Producer service will wait for indefinately. So far, the only way to provide user input to this service is to run the [`docker attach [OPTIONS] CONTAINER`](https://docs.docker.com/engine/reference/commandline/attach/) command. For `CONTAINER` apply the container ID for the producer service that is running. You can run the `docker ps` command to view this information for the containers that are currently running.
 
 Think you've got what it takes? Take development into your own hands, improve on what these microservices offer for production! (⌐■_■)
 
