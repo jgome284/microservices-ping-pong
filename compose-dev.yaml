@@ -7,6 +7,8 @@ services:
       
   # create producer service
   producer:
+    # set image name and tag
+    image: producer:development
     # configure build properties
     build: 
       # set build context to producer devcontainer
@@ -31,6 +33,8 @@ services:
   
   # create consumer service
   consumer:
+    # set image name and tag:
+    image: consumer:development
     # configure build properties
     build: 
       # set build context to consumer devcontainer
